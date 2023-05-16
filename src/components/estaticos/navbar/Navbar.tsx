@@ -1,46 +1,66 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box, createTheme, ThemeProvider } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import './Navbar.css'
+
+const theme = createTheme({  
+    typography: {
+      fontFamily: 
+      '"Indie Flower", cursive',
+    },
+  });
 
 function Navbar(){
     return(
         <>
-            <AppBar position="static">
+            <AppBar position="static" style={{background: "#DDA0DD"}}  >
                 <Toolbar variant="dense">
-                    <Box style={{backgroundColor:"#DDA0DD", height:"60px",cursor: "pointer"}}>
-                        <Typography variant="h5" color="inherit">
-                            BlogPessoal Michelle
+                <ThemeProvider theme={theme}>
+                    <Box style={{cursor: "pointer"}}>
+                        <Typography variant="h5" style={{color: "#800F2F", fontSize: 50}}>
+                            BlogPessoal
                         </Typography>
                     </Box>
                     <Box display="flex" justifyContent="start">
+                        <Link to='/home' className='text-decorator-none'>
+                            <Box mx={1} style={{ cursor: "pointer"}}>
+                                <Typography variant="h6" style={{color: "#590D22"}}>
+                                    Home
+                                </Typography>
+                            </Box>
+                        </Link>
                         <Box mx={1} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" color="inherit">
-                                Home
+                            <Typography variant="h6" style={{color: "#590D22"}}>
+                                Criar Postagem
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h6" style={{color: "#590D22"}}>
                                 Postagens
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h6" style={{color: "#590D22"}}>
                                 Temas
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h6" style={{color: "#590D22"}}>
                                 Cadastrar Temas
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" color="inherit">
-                                Logout
-                            </Typography>
-                        </Box>
-
+                        <Link to='/login' className='text-decorator-none'>
+                            <Box mx={1} style={{ cursor: "pointer"}}>
+                                <Typography variant="h6" style={{color: "#590D22"}}>
+                                    Logout
+                                </Typography>
+                            </Box>
+                        </Link>
                     </Box>
+                    </ThemeProvider>
                 </Toolbar>
             </AppBar>
+          
         </>
     );
 };

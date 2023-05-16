@@ -11,17 +11,17 @@ function Footer(){
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{backgroundColor: "#DDA0DD", height: "120px"}}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{color:"white"}}>Siga-nos nas redes sociais</Typography>
+                            <Typography variant="h5" align="center" gutterBottom style={{color:"#800F2F"}}>Siga-nos nas redes sociais</Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://github.com/MichelleGreghi" target="_blank"><GitHubIcon style={{fontSize: 60, color: "white"}}/> </a>
-                            <a href="https://www.linkedin.com/in/michellegreghi/" target="_blank"><LinkedInIcon style={{fontSize: 60, color: "white"}}/> </a>
-                            <a href="michelle.neves23@gmail.com" target="_blank"><MailOutlineIcon style={{fontSize: 60, color: "white"}}/> </a>
+                            <a href="https://github.com/MichelleGreghi" target="_blank"><GitHubIcon style={{fontSize: 60, color: "#800F2F"}}/> </a>
+                            <a href="https://www.linkedin.com/in/michellegreghi/" target="_blank"><LinkedInIcon style={{fontSize: 60, color: "#800F2F"}}/> </a>
+                            <a href="michelle.neves23@gmail.com" target="_blank"><MailOutlineIcon style={{fontSize: 60, color: "#800F2F"}}/> </a>
                         </Box>
                     </Box>
                     <Box style={{backgroundColor:"#DDA0DD", height:"60px"}}>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{color:"white"}}>© 2023 Copyright</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom style={{color:"#C9184A"}}>© 2023 Copyright</Typography>
                         </Box>
 
                     </Box>
