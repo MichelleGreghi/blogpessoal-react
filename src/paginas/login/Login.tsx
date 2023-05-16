@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Login(){
 
     return(
         <>
-            <h1>Página de Login</h1>
+            <Link to='/login' className='text-decorator-none'>
+                <h1>Página de Login</h1>
+            </Link>
         </>
     )
 }
