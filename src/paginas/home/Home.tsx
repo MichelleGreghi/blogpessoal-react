@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Typography, Box, Grid, Button } from '@material-ui/core';
+import { Grid} from '@material-ui/core';
 import Carrossel from '../../components/carrossel/Carrossel';
 
 function Home(){
@@ -24,7 +24,7 @@ function Home(){
                 </Grid>
            </Grid> */}
 
-        <Grid container style={{ marginTop: "8px" }}>
+        <Grid container style={{ marginTop: "2px" }}>
             <Grid item xs={12}>
                 <Carrossel />
             </Grid>

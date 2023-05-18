@@ -8,5 +8,6 @@
 .text-decorator-none{
     text-decoration: none;
     color: white;
+   font-family:'Courier New', Courier, monospace;
 }
 
