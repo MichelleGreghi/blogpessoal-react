@@ -76,7 +76,7 @@ function CadastroUsuario(){
                             </Link>
                             <Button type='submit' variant='contained' className='botaoCadastrar'>
                                     Cadastrar
-                                </Button>
+                            </Button>
                         </Box>
                     </form>
                 </Box>

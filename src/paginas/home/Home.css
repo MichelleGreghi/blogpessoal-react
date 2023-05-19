@@ -1,0 +1,17 @@
+.imagemHome{
+    width:600px; 
+    height:500px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 7px #590D22;
+}
+
+.botaoHome{
+    border-color: white !important;
+    background-color: #FF4D6D !important;
+    box-shadow: 3px 3px 7px #590D22;
+    color: white !important;
+}
+
+.botaoHome:hover{
+    background-color:#590D22 !important;
+}

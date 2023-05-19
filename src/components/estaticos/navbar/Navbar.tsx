@@ -13,13 +13,13 @@ const theme = createTheme({
 function Navbar(){
     return(
         <>
+        <Typography variant="h5" style={{color: "#C9184A", fontSize: 50,background: "#FFB3C1", textAlign:"center"}}>
+             Blog da Mi
+        </Typography>
             <AppBar position="static" style={{background: "#FFB3C1"}}  >
-                <Toolbar variant="dense">
+                <Toolbar variant="dense" >
                 <ThemeProvider theme={theme}>
                     <Box className='cursor'>
-                        <Typography variant="h5" style={{color: "#C9184A", fontSize: 50}}>
-                            BlogPessoal
-                        </Typography>
                     </Box>
                     <Box display="flex" justifyContent="start">
                         <Link to='/home' className='text-decorator-none'>

@@ -1,12 +1,13 @@
 import React from 'react';
 import './Home.css';
-import { Grid} from '@material-ui/core';
-import Carrossel from '../../components/carrossel/Carrossel';
+import { Box, Button, Grid, Typography} from '@material-ui/core';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+// import Carrossel from '../../components/carrossel/Carrossel';
 
 function Home(){
     return(
         <>
-           {/* <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#DDA0DD"}}>
+            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#FFB3C1"}}>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20}>
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{color: "white", fontWeight: "bold"}}>Seja bem vindo(a)!</Typography>
@@ -14,21 +15,22 @@ function Home(){
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}></Box>
-                    <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#DDA0DD", color: "white"}}>Ver Postagens</Button>
+                    <Button variant="outlined" className='botaoHome'>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://i.imgur.com/H88yIo2.png" alt="Sala de Reuniões" width="500px" height="500px" />
+                    <img className='imagemHome' src="../../../src/assets/images/dicas.jpg" alt="Flor, Café e Bloco de notas"/>
                 </Grid>
-                <Grid xs={12} style={{ backgroundColor: "white"}}>
+                <Grid xs={12} className='postagens' style={{ backgroundColor: "white"}}>
+                    <TabPostagem />
                 </Grid>
-           </Grid> */}
+           </Grid> 
 
-        <Grid container style={{ marginTop: "2px" }}>
+        {/* <Grid container style={{ marginTop: "2px" }}>
             <Grid item xs={12}>
                 <Carrossel />
             </Grid>
-        </Grid>
+        </Grid> */}
         </>
     );
 }
