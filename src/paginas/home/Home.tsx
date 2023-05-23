@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import { Box, Button, Grid, Typography} from '@material-ui/core';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
 // import Carrossel from '../../components/carrossel/Carrossel';
 
 function Home(){
+
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+        
+    useEffect(() => {
+        if (token == "") {
+        alert("Você precisa estar logado")
+        navigate("/login")
+      
+        }
+    }, [token])
+
     return(
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#FFB3C1"}}>
@@ -14,7 +29,9 @@ function Home(){
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{color: "white", fontWeight: "bold"}}>Expresse aqui os seus pensamentos e opiniões!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}></Box>
+                        <Box marginRight={1}>
+                            <ModalPostagem />
+                        </Box>
                     <Button variant="outlined" className='botaoHome'>Ver Postagens</Button>
                     </Box>
                 </Grid>
