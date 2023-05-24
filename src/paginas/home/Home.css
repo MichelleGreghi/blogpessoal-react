@@ -3,6 +3,14 @@
     height:500px;
     border-radius: 20px;
     box-shadow: 3px 3px 7px #590D22;
+    filter: opacity(60%); 
+
+}
+
+.imagemHome:hover{
+    filter: grayscale(0%);
+    transition: 500ms linear !important;
+
 }
 
 .botaoHome{

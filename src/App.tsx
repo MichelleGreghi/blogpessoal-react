@@ -26,7 +26,7 @@ function App() {
                 <Route path="/temas" element={<ListaTema/>}/>
                 <Route path="/postagens" element={<ListaPostagem/>}/>
                 <Route path="/formularioPostagem" element={<CadastroPostagem/>}/>
-                <Route path="/postagens/:id" element={<CadastroPostagem/>}/>
+                <Route path="/formularioPostagem/:id" element={<CadastroPostagem/>}/>
                 <Route path="/deletarPostagem/:id" element={<DeletarPostagem/>}/>
                 <Route path="/formularioTema" element={<CadastroTema/>}/>
                 <Route path="/temas/:id" element={<CadastroTema/>}/>

@@ -39,7 +39,7 @@ function Navbar(){
                                     </Typography>
                             </Box>
                         </Link>
-                        <Link to="/postagens" className='text-decorator-none'>
+                        <Link to="/formularioPostagem" className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h6" style={{color: "#C9184A"}}>
                                     Criar Postagem

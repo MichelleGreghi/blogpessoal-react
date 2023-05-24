@@ -41,7 +41,7 @@ function DeletarTema() {
                 'Authorization': token
               }
             });
-            alert('Tema deletado com sucesso');
+            alert('Tema deletado com sucesso!');
           }
         
           function nao() {
@@ -53,7 +53,7 @@ function DeletarTema() {
     <>
       <Box m={2}>
         <Card variant="outlined">
-          <CardContent>
+          <CardContent style={{backgroundColor:"#fff0f3"}}>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
               Deseja deletar o Tema:
@@ -63,15 +63,15 @@ function DeletarTema() {
               </Typography>
             </Box>
           </CardContent>
-          <CardActions>
+          <CardActions style={{backgroundColor:"#fff0f3"}}>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                <Button onClick={sim} variant="contained" className="btnSim" size='large'>
                 Sim
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button  onClick={nao} variant="contained" size='large' color="secondary">
+                <Button  onClick={nao} variant="contained" className="btnNao" size='large'>
                 Não
                 </Button>
               </Box>
