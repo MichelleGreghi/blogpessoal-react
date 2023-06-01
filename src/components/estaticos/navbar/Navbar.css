@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Indie+Flower&family=Rubik:wght@500&display=swap');
 
+.blog{
+    text-decoration: none;
+    display: block !important;
+    margin-left: 200px;
+}
+
+.navbar{
+    display: block !important;
+    text-decoration: none;
+    margin: 15px;
+}
+
 .cursor{
     cursor: pointer;
     color:white;

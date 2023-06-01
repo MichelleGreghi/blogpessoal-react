@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL:'https://blogpessoal-q4cs.onrender.com'
+    baseURL: import.meta.env.VITE_API_URL
+    
 })
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
@@ -21,6 +22,11 @@ export const busca = async(url: any,setDado: any, header: any) => {
 
 export const buscaId = async(url: any,setDado: any, header: any) => { 
     const resposta = await api.get(url,header)
+    setDado(resposta.data)
+}
+
+export const id = async(url: any, dados: any,setDado: any, header: any) => { 
+    const resposta = await api.put(url, dados, header)
     setDado(resposta.data)
 }
 

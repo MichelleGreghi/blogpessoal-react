@@ -16,6 +16,9 @@ import { Provider } from "react-redux";
 import store from "./store/Store";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import Perfil from "./components/perfil/verPerfil/Perfil";
+import AtualizarPerfil from "./components/perfil/atualizarPerfil/AtualizarPerfil";
+
 
 function App() {
   return (
@@ -32,14 +35,14 @@ function App() {
             <Route path="/temas" element={<ListaTema />} />
             <Route path="/postagens" element={<ListaPostagem />} />
             <Route path="/formularioPostagem" element={<CadastroPostagem />} />
-            <Route
-              path="/formularioPostagem/:id"
-              element={<CadastroPostagem />}
-            />
+            <Route path="/formularioPostagem/:id" element={<CadastroPostagem />} />
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
             <Route path="/formularioTema" element={<CadastroTema />} />
             <Route path="/temas/:id" element={<CadastroTema />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/atualizar-perfil" element={<AtualizarPerfil />} />
+            {/* <Route path="/curtirPostagem/:id" element={<ListaPostagem />} /> */}
           </Routes>
         </div>
         <Footer />

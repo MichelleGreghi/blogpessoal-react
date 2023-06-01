@@ -4,12 +4,15 @@
     border-radius: 20px;
     box-shadow: 3px 3px 7px #590D22;
     filter: opacity(60%); 
-
+    margin-top: 50px;
+    margin-bottom: 100px; 
+    transition: 1.5s ease !important;
 }
 
 .imagemHome:hover{
     filter: grayscale(0%);
-    transition: 500ms linear !important;
+    /* transition: 500ms linear !important; */
+    transform: scale(1.1);
 
 }
 

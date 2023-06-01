@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import User from "../../../models/User";
 
 function CadastroPostagem() {
+
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -145,7 +146,16 @@ function CadastroPostagem() {
         });
       } catch (error) {
         console.log(`Erro: ${error}`);
-        alert("Algo deu errado! Tente novamente!");
+        toast.error("Ops... Algo deu Errado!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       }
     }
     back();

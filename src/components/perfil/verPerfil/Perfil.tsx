@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
-
-import User from '../../models/User';
-import { buscaId } from '../../service/Service';
+import User from '../../../models/User';
+import { buscaId } from '../../../service/Service';
 import './Perfil.css'
-import { UserState } from '../../store/token/Reducer';
+import { UserState } from '../../../store/token/Reducer';
 
 function Perfil() {
 
-    let history = useNavigate()
+    let navigate = useNavigate()
 
     // Pega o ID guardado no Store
     const id = useSelector<UserState, UserState["id"]>(
@@ -33,7 +32,7 @@ function Perfil() {
     useEffect(() => {
         if (token === "") {
             alert("Você precisa estar logado")
-            history("/login")
+            navigate("/login")
         }
     }, [token])
 
@@ -81,4 +80,4 @@ function Perfil() {
     )
 }
 
-export default Perfil
+export default Perfil;

@@ -6,6 +6,7 @@ interface Postagem{
     titulo:string;
     texto:string;
     data: string;
+    curtida: number;
     tema?:Tema| null;
     usuario?: User | null 
 

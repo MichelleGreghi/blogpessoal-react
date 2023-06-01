@@ -46,20 +46,34 @@ function CadastroUsuario() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     if (confirmarSenha === user.senha) {
-      await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      toast.success("Usuário cadastrado com sucesso!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-      });
+      try {
+        await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
+        toast.success("Usuário cadastrado com sucesso!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+      } catch (error) {
+        console.log(error);
+        toast.error("Erro ao cadastrar o Usuário! O Usuário já existe!", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+      }
     } else {
       toast.error(
-        "Dados inconsistentes. Favor verificar as informações de cadastro!",
+        "Erro ao cadastrar o Usuário! Verifique os dados e tente novamente.",
         {
           position: "top-right",
           autoClose: 2000,
@@ -73,6 +87,19 @@ function CadastroUsuario() {
       );
     }
   }
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const validarEmail = emailRegex.test(user.usuario);
+
+  const nomeOk = user.nome.length > 0 && user.nome.length < 3;
+  const usuarioOk = !validarEmail && user.usuario.length > 0;
+  const senhaOk = user.senha.length > 0 && user.senha.length < 8;
+  const confirmarSenhaOk = confirmarSenha !== user.senha;
+  const vazio =
+    user.nome.length === 0 ||
+    user.usuario.length === 0 ||
+    user.senha.length === 0 ||
+    confirmarSenha.length === 0;
+
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
       <Grid item xs={6} className="imagem2"></Grid>
@@ -89,6 +116,7 @@ function CadastroUsuario() {
               Cadastrar
             </Typography>
             <TextField
+              error={nomeOk}
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
@@ -97,8 +125,10 @@ function CadastroUsuario() {
               name="nome"
               margin="normal"
               fullWidth
+              helperText={nomeOk ? "Digite um nome válido!" : ""}
             />
             <TextField
+              error={usuarioOk}
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
@@ -107,6 +137,7 @@ function CadastroUsuario() {
               name="usuario"
               margin="normal"
               fullWidth
+              helperText={usuarioOk ? "Digite um e-mail válido!" : ""}
             />
             <TextField
               value={user.foto}
@@ -119,6 +150,7 @@ function CadastroUsuario() {
               fullWidth
             />
             <TextField
+              error={senhaOk}
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
@@ -128,8 +160,12 @@ function CadastroUsuario() {
               margin="normal"
               type="password"
               fullWidth
+              helperText={
+                senhaOk ? "A senha precisa ter no mínimo 8 caracteres" : ""
+              }
             />
             <TextField
+              error={confirmarSenhaOk}
               value={confirmarSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 confirmarSenhaHandle(e)
@@ -141,6 +177,7 @@ function CadastroUsuario() {
               margin="normal"
               type="password"
               fullWidth
+              helperText={confirmarSenhaOk ? "As senhas não conferem!" : ""}
             />
             <Box marginTop={2} textAlign="center">
               <Link to="/login">
@@ -152,6 +189,11 @@ function CadastroUsuario() {
                 type="submit"
                 variant="contained"
                 className="botaoCadastrar"
+                disabled={
+                  nomeOk || usuarioOk || senhaOk || confirmarSenhaOk || vazio
+                    ? true
+                    : false
+                }
               >
                 Cadastrar
               </Button>

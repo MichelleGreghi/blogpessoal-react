@@ -46,10 +46,12 @@ function Navbar() {
 
   if (token !== "") {
     navbarComponent = (
-
+      
+      
       <AppBar position="static" style={{ background: "#FFB3C1" }}>
         <Toolbar variant="dense">
           <ThemeProvider theme={theme}>
+          <Link to="/home" className="blog">
             <Typography
               variant="h5"
               style={{
@@ -61,45 +63,60 @@ function Navbar() {
             >
               Blog da Mi
             </Typography>
+            </Link>
             <Box className="cursor"></Box>
             <Box display="flex" justifyContent="start">
-              <Link to="/home" className="text-decorator-none">
+              <Link to="/home" className="navbar">
                 <Box mx={1} className="cursor">
                   <Typography variant="h6" style={{ color: "#C9184A" }}>
                     Home
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/formularioPostagem" className="text-decorator-none">
+              {/* <Link to="/formularioPostagem" className="text-decorator-none">
                 <Box mx={1} className="cursor">
                   <Typography variant="h6" style={{ color: "#C9184A" }}>
                     Criar Postagem
                   </Typography>
                 </Box>
-              </Link>
-              <Link to="/postagens" className="text-decorator-none">
+              </Link> */}
+              <Link to="/postagens" className="navbar">
                 <Box mx={1} className="cursor">
                   <Typography variant="h6" style={{ color: "#C9184A" }}>
                     Postagens
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/temas" className="text-decorator-none">
+              <Link to="/temas" className="navbar">
                 <Box mx={1} className="cursor">
                   <Typography variant="h6" style={{ color: "#C9184A" }}>
                     Temas
                   </Typography>
                 </Box>
               </Link>
-              <Link to="/formularioTema" className="text-decorator-none">
+              {/* <Link to="/formularioTema" className="text-decorator-none">
                 <Box mx={1} className="cursor">
                   <Typography variant="h6" style={{ color: "#C9184A" }}>
                     Cadastrar Temas
                   </Typography>
                 </Box>
+              </Link> */}
+              <Link to="/perfil" className="navbar">
+                <Box mx={1} className="cursor">
+                  <Typography variant="h6" style={{ color: "#C9184A" }}>
+                    Perfil de Usuário
+                  </Typography>
+                </Box>
+              </Link>
+              <Link to="/atualizar-perfil" className="navbar">
+                <Box mx={1} className="cursor">
+                  <Typography variant="h6" style={{ color: "#C9184A" }}>
+                    Atualizar o Perfil de Usuário
+                  </Typography>
+                </Box>
               </Link>
 
-              <Box mx={1} className="cursor" onClick={goLogout}>
+              <Box mx={1} className="navbar" onClick={goLogout}>
                 <Typography variant="h6" style={{ color: "#C9184A" }}>
                   Logout
                 </Typography>
