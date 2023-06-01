@@ -84,9 +84,9 @@ function ListaPostagem() {
                     timeStyle: "medium",
                   }).format(new Date(post.data))}
                 </Typography>
-                <Typography variant="body2" component="p">
+                {/* <Typography variant="body2" component="p">
                   Curtidas: {post.curtida}
-                </Typography>
+                </Typography> */}
                 
                 <Typography
                   style={{ color: "#C9184A" }}
