@@ -80,7 +80,7 @@ function Home() {
         <Grid item xs={6}>
           <img
             className="imagemHome"
-            src="../../../src/assets/images/dicas.jpg"
+            src="https://i.imgur.com/ituN9Ps.jpg"
             alt="Flor, Café e Bloco de notas"
           />
         </Grid>
